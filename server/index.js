@@ -14,22 +14,22 @@ const port = 8000
 
 // Destructing vars from .env to use in index.js
 const {
-    SERVER_PORT,
-    CONNECTION_STRING
+  SERVER_PORT,
+  CONNECTION_STRING
 } = process.env
 
 // Using massive to connect to db
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {
-        rejectUnauthorized: false
-    }
-})
-.then(db => {
+      rejectUnauthorized: false
+    };
+  })
+  .then(db => {
     app.set('db', db)
     console.log('db connected')
-})
-.catch((err) => console.log(err))
+  })
+  .catch((err) => console.log(err))
 
 
 
