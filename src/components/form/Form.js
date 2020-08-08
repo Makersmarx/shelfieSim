@@ -3,17 +3,25 @@ import axios from 'axios';
 
 
 class Form extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
-
+			name: '',
+			price: '',
+			image_url: ''
 		}
 
 	}
+
+	componentDidMount() {
+		const {id} = this.props.match.params
+		this.getProduct(id)
+	}
+
 	render() {
 		return (
 			<div>
-				
+
 			</div>
 		)
 	}
